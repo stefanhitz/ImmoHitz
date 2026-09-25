@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="#eef1f6"/>
+  <circle cx="200" cy="160" r="70" fill="#203a6b"/>
+  <path d="M80 380c0-80 54-140 120-140s120 60 120 140z" fill="#203a6b"/>
+  <text x="200" y="370" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#5b6472">Foto folgt</text>
+</svg>
