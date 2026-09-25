@@ -7,7 +7,7 @@
 - [ ] Mobile-Ansicht (< 720px) geprüft: Hamburger-Menü funktioniert auf jeder Seite
 - [ ] Echte Formspree-Formular-ID erstellt (auf formspree.io) und in `kontakt.html` eingetragen (nicht mehr `REPLACE-WITH-YOUR-FORM-ID`), danach eine echte Testanfrage über das Live-Formular verschickt und die Zustellung per E-Mail geprüft
 - [ ] UID/Handelsregisternummer in `impressum.html` ergänzt (nicht mehr `[vor Live-Schaltung ergänzen]`)
-- [ ] Echte Team-Fotos eingefügt (ersetzen `img/site/portrait-placeholder.svg` in `team.html`; `scripts/process-images.sh` dafür verwenden)
+- [x] Echte Team-Fotos eingefügt (von immohitz.ch übernommen, mit `scripts/process-images.sh` aufbereitet)
 - [ ] Aktuelle Immobilienangebote in `data/listings.json` eingetragen, sobald welche vorliegen (siehe Feldschema in der Spec); bis dahin bleibt die Datei bewusst `[]`
 
 ## Upload per SFTP
