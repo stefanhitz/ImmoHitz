@@ -956,6 +956,7 @@ function renderCard(listing) {
     body.appendChild(desc);
   }
 
+  card.appendChild(body);
   return card;
 }
 
