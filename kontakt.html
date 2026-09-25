@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kontakt – ImmoHitz GmbH</title>
+<link rel="stylesheet" href="/css/style.css">
+<style>
+  .contact { max-width: 640px; margin: 0 auto; padding: 48px 20px; }
+  .contact h1 { text-align: center; }
+  .contact-intro { text-align: center; color: var(--color-text-light); margin-bottom: 24px; }
+  .contact-details { text-align: center; margin-bottom: 32px; line-height: 1.8; }
+  .contact-details a { color: var(--color-primary); }
+  .form-error { background: #fdecea; color: #7a1f1f; border: 1px solid #f2b8b5; border-radius: var(--radius); padding: 12px 16px; margin-bottom: 20px; }
+  .form-field { margin-bottom: 16px; }
+  .form-field label { display: block; font-weight: 700; margin-bottom: 4px; }
+  .form-field input, .form-field textarea {
+    width: 100%; padding: 10px 12px; border: 1px solid var(--color-border);
+    border-radius: 8px; font-family: var(--font-body); font-size: 15px;
+  }
+  .form-field input[aria-invalid="true"], .form-field textarea[aria-invalid="true"] { border-color: #c0392b; }
+  .honeypot { position: absolute; left: -9999px; }
+</style>
+</head>
+<body data-page="kontakt">
+<div data-include="/partials/header.html"></div>
+
+<main class="contact">
+  <h1>Kontaktieren Sie uns!</h1>
+  <p class="contact-intro">Der einfachste Weg, mit uns in Kontakt zu treten. Wir bemühen uns um schnellstmögliche Bearbeitung Ihrer Anfrage!</p>
+
+  <p class="contact-details">
+    ImmoHitz GmbH<br>
+    Unterdorfstrasse 8, 3322 Urtenen-Schönbühl<br>
+    Telefon: <a href="tel:+41313043834">+41 31 304 38 34</a><br>
+    E-Mail: <a href="mailto:info@immohitz.ch">info@immohitz.ch</a>
+  </p>
+
+  <p class="form-error" id="formError" role="alert" hidden>Sie haben nicht alle Pflichtfelder ausgefüllt. Bitte überprüfen Sie Ihre Eingaben.</p>
+
+  <form id="contactForm" action="https://formspree.io/f/REPLACE-WITH-YOUR-FORM-ID" method="POST" novalidate>
+    <input type="text" name="_gotcha" class="honeypot" tabindex="-1" autocomplete="off">
+    <input type="hidden" name="_subject" value="Neue Anfrage von der ImmoHitz Website">
+
+    <div class="form-field">
+      <label for="vorname">Vorname *</label>
+      <input type="text" id="vorname" name="vorname" required>
+    </div>
+    <div class="form-field">
+      <label for="nachname">Nachname *</label>
+      <input type="text" id="nachname" name="nachname" required>
+    </div>
+    <div class="form-field">
+      <label for="email">E-Mail *</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-field">
+      <label for="telefon">Telefon *</label>
+      <input type="tel" id="telefon" name="telefon" required>
+    </div>
+    <div class="form-field">
+      <label for="nachricht">Nachricht</label>
+      <textarea id="nachricht" name="nachricht" rows="5"></textarea>
+    </div>
+
+    <p><em>* Pflichtfelder</em></p>
+    <button type="submit" class="btn">Nachricht senden</button>
+  </form>
+</main>
+
+<div data-include="/partials/footer.html"></div>
+<script type="module" src="/js/include.js"></script>
+<script type="module" src="/js/nav.js"></script>
+<script type="module" src="/js/contact-form-ui.js"></script>
+</body>
+</html>

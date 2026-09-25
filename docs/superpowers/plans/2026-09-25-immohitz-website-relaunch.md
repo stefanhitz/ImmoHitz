@@ -1223,7 +1223,7 @@ document.addEventListener('partials:loaded', () => {
 
   <p class="form-error" id="formError" role="alert" hidden>Sie haben nicht alle Pflichtfelder ausgefüllt. Bitte überprüfen Sie Ihre Eingaben.</p>
 
-  <form id="contactForm" action="https://formspree.io/f/REPLACE-WITH-YOUR-FORM-ID" method="POST">
+  <form id="contactForm" action="https://formspree.io/f/REPLACE-WITH-YOUR-FORM-ID" method="POST" novalidate>
     <input type="text" name="_gotcha" class="honeypot" tabindex="-1" autocomplete="off">
     <input type="hidden" name="_subject" value="Neue Anfrage von der ImmoHitz Website">
 
