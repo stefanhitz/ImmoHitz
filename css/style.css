@@ -126,7 +126,11 @@ footer.site-footer a { color: var(--color-text-light); margin: 0 8px; }
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   padding: 24px;
+  display: block;
+  text-decoration: none;
+  transition: border-color 0.15s;
 }
+.service-card:hover { border-color: var(--color-primary); }
 .service-card h2 { color: var(--color-primary); font-size: 19px; }
 .service-card p { color: var(--color-text-light); margin: 0; }
 
