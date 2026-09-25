@@ -181,6 +181,10 @@ footer.site-footer a { color: var(--color-text-light); margin: 0 8px; }
   padding: 3px 10px;
   border-radius: 12px;
   color: #fff;
+  /* Safety-net default so an unrecognised status class (a typo in the
+     hand-edited data/listings.json) still renders a visible badge instead
+     of white text on a transparent background. */
+  background: var(--color-text-light);
 }
 .status-badge.status-aktiv { background: var(--color-status-aktiv); }
 .status-badge.status-vermietet { background: var(--color-status-vermietet); }

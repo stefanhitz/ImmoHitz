@@ -1,4 +1,4 @@
-import { getTypes, filterByType, statusLabel } from './listings-data.js';
+import { getTypes, filterByType, buildListingCard } from './listings-data.js';
 
 let allListings = [];
 let currentListings = [];
@@ -70,53 +70,51 @@ function renderCard(listing) {
   const card = document.createElement('article');
   card.className = 'listing-card';
 
+  const model = buildListingCard(listing);
+
   const img = document.createElement('img');
-  img.src = listing.bild || '/img/site/listing-placeholder.svg';
-  img.alt = listing.titel || 'Immobilienangebot';
+  img.src = model.imgSrc;
+  img.alt = model.imgAlt;
   img.loading = 'lazy';
   card.appendChild(img);
 
   const body = document.createElement('div');
   body.className = 'listing-body';
 
-  const status = listing.status || 'aktiv';
   const badge = document.createElement('span');
-  badge.className = `status-badge status-${status}`;
-  badge.textContent = statusLabel(status);
+  badge.className = `status-badge status-${model.badgeClass}`;
+  badge.textContent = model.badgeLabel;
   body.appendChild(badge);
 
   const h2 = document.createElement('h2');
-  h2.textContent = listing.titel || 'Immobilienangebot';
+  h2.textContent = model.title;
   body.appendChild(h2);
 
-  if (listing.ort) {
+  if (model.ort) {
     const ort = document.createElement('p');
     ort.className = 'listing-ort';
-    ort.textContent = listing.ort;
+    ort.textContent = model.ort;
     body.appendChild(ort);
   }
 
-  const metaParts = [];
-  if (listing.zimmer) metaParts.push(`${listing.zimmer} Zimmer`);
-  if (listing.flaeche) metaParts.push(`${listing.flaeche} m²`);
-  if (metaParts.length > 0) {
+  if (model.metaText) {
     const meta = document.createElement('p');
     meta.className = 'listing-meta';
-    meta.textContent = metaParts.join(' · ');
+    meta.textContent = model.metaText;
     body.appendChild(meta);
   }
 
-  if (listing.preis) {
+  if (model.preis) {
     const preis = document.createElement('p');
     preis.className = 'listing-preis';
-    preis.textContent = listing.preis;
+    preis.textContent = model.preis;
     body.appendChild(preis);
   }
 
-  if (listing.beschreibung) {
+  if (model.beschreibung) {
     const desc = document.createElement('p');
     desc.className = 'listing-desc';
-    desc.textContent = listing.beschreibung;
+    desc.textContent = model.beschreibung;
     body.appendChild(desc);
   }
 
