@@ -1,0 +1,145 @@
+/* Self-hosted webfonts (SIL Open Font License).
+   Deliberately NOT loaded from fonts.googleapis.com / fonts.gstatic.com: that
+   would send every visitor's IP address to Google and contradict the privacy
+   statement on datenschutz.html. Files live in /fonts/ and ship with the site. */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/fonts/inter-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/fonts/inter-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Libre Franklin';
+  font-style: normal;
+  font-weight: 600 800;
+  font-display: swap;
+  src: url('/fonts/libre-franklin-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Libre Franklin';
+  font-style: normal;
+  font-weight: 600 800;
+  font-display: swap;
+  src: url('/fonts/libre-franklin-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+:root {
+  --color-primary: #203a6b;
+  --color-primary-dark: #17284d;
+  --color-accent: #c08a2e;
+  --color-bg: #f7f8fa;
+  --color-bg-alt: #eef1f6;
+  --color-text: #1f2430;
+  --color-text-light: #5b6472;
+  --color-border: #dfe3ea;
+  --color-status-aktiv: #2f7d4f;
+  --color-status-vermietet: #a5690f;
+  --color-status-verkauft: #6b7280;
+  --font-heading: 'Libre Franklin', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --radius: 12px;
+  --max-width: 1100px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.6;
+}
+
+h1, h2, h3 { font-family: var(--font-heading); font-weight: 700; margin: 0 0 0.5em; }
+
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 20px; }
+
+header.site-header { background: #fff; border-bottom: 1px solid var(--color-border); position: relative; }
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 12px 20px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.nav-logo { display: flex; align-items: center; margin-right: auto; }
+.nav-logo-img { height: 40px; width: auto; display: block; }
+
+.nav-links { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; }
+.nav-links a { color: var(--color-text); text-decoration: none; font-weight: 700; font-size: 15px; }
+.nav-links a:hover, .nav-links a.active { color: var(--color-primary); }
+
+.nav-toggle { display: none; background: none; border: none; font-size: 26px; cursor: pointer; color: var(--color-primary); }
+
+.btn {
+  display: inline-block;
+  padding: 10px 22px;
+  border-radius: 24px;
+  background: var(--color-primary);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 15px;
+}
+.btn:hover { background: var(--color-primary-dark); }
+
+footer.site-footer { text-align: center; padding: 24px 20px; font-size: 13px; color: var(--color-text-light); }
+footer.site-footer a { color: var(--color-text-light); margin: 0 8px; }
+
+.hero {
+  background: var(--color-bg-alt);
+  padding: 48px 20px;
+  text-align: center;
+}
+.hero h1 { font-size: 32px; color: var(--color-primary); }
+.hero p { font-size: 16px; color: var(--color-text-light); margin: 0 0 20px; max-width: 640px; margin-left: auto; margin-right: auto; }
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: var(--max-width);
+  margin: 32px auto;
+  padding: 0 20px;
+}
+.service-card {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+.service-card h2 { color: var(--color-primary); font-size: 19px; }
+.service-card p { color: var(--color-text-light); margin: 0; }
+
+@media (max-width: 720px) {
+  .nav-toggle { display: block; }
+  .nav-links {
+    position: absolute;
+    top: 64px; left: 0; right: 0;
+    background: #fff;
+    flex-direction: column;
+    padding: 12px 20px;
+    display: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .nav-links.open { display: flex; }
+}
