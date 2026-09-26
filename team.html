@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Team – ImmoHitz GmbH</title>
+<link rel="stylesheet" href="/ImmoHitz/css/style.css">
+<style>
+  .team-intro { text-align: center; padding: 40px 20px 0; }
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    max-width: var(--max-width);
+    margin: 32px auto 48px;
+    padding: 0 20px;
+  }
+  .team-card { text-align: center; }
+  .team-card img { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; margin-bottom: 12px; }
+  .team-card h2 { font-size: 19px; margin-bottom: 2px; }
+  .team-card .role { color: var(--color-text-light); margin: 0 0 10px; }
+  .team-card a { color: var(--color-primary); text-decoration: none; display: block; }
+</style>
+</head>
+<body data-page="team">
+<div data-include="/ImmoHitz/partials/header.html"></div>
+
+<main>
+  <h1 class="team-intro">Team ImmoHitz</h1>
+  <div class="team-grid">
+    <article class="team-card">
+      <img src="/ImmoHitz/img/site/team/tamara.jpg" alt="Portrait von Tamara Hitz">
+      <h2>Tamara Hitz</h2>
+      <p class="role">Inhaberin / Administration</p>
+      <a href="tel:+41313043834">Telefon: +41 31 304 38 34</a>
+      <a href="mailto:info@immohitz.ch">info@immohitz.ch</a>
+    </article>
+    <article class="team-card">
+      <img src="/ImmoHitz/img/site/team/jeremias.jpg" alt="Portrait von Jeremias Hitz">
+      <h2>Jeremias Hitz</h2>
+      <p class="role">Inhaber / eidg. dipl. Immobilientreuhänder</p>
+      <a href="tel:+41796061480">Telefon: +41 79 606 14 80</a>
+      <a href="mailto:jeremias.hitz@immohitz.ch">jeremias.hitz@immohitz.ch</a>
+    </article>
+  </div>
+</main>
+
+<div data-include="/ImmoHitz/partials/footer.html"></div>
+<script type="module" src="/ImmoHitz/js/include.js"></script>
+<script type="module" src="/ImmoHitz/js/nav.js"></script>
+</body>
+</html>
