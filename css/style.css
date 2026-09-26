@@ -61,6 +61,9 @@ body {
   color: var(--color-text);
   background: var(--color-bg);
   line-height: 1.6;
+  /* German compound words (e.g. "Stockwerkeigentümergemeinschaft") have no
+     natural break point and will otherwise overflow narrow containers. */
+  overflow-wrap: break-word;
 }
 
 h1, h2, h3 { font-family: var(--font-heading); font-weight: 700; margin: 0 0 0.5em; }
@@ -115,7 +118,7 @@ footer.site-footer a { color: var(--color-text-light); margin: 0 8px; }
 
 .service-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
   max-width: var(--max-width);
   margin: 32px auto;
@@ -131,7 +134,7 @@ footer.site-footer a { color: var(--color-text-light); margin: 0 8px; }
   transition: border-color 0.15s;
 }
 .service-card:hover { border-color: var(--color-primary); }
-.service-card h2 { color: var(--color-primary); font-size: 19px; }
+.service-card h2 { color: var(--color-primary); font-size: 19px; hyphens: auto; }
 .service-card p { color: var(--color-text-light); margin: 0; }
 
 @media (max-width: 720px) {
@@ -195,3 +198,24 @@ footer.site-footer a { color: var(--color-text-light); margin: 0 8px; }
 .status-badge.status-verkauft { background: var(--color-status-verkauft); }
 
 .listing-message { grid-column: 1 / -1; text-align: center; color: var(--color-text-light); padding: 20px; }
+
+.portal-banner {
+  max-width: 640px;
+  margin: 24px auto 0;
+  padding: 20px 24px;
+  background: var(--color-bg-alt);
+  border-radius: var(--radius);
+  text-align: center;
+}
+.portal-banner p { margin: 0 0 12px; color: var(--color-text-light); }
+
+.breadcrumb { text-align: center; padding-top: 24px; }
+.breadcrumb a { color: var(--color-text-light); text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; }
+
+.service-detail { max-width: 720px; margin: 0 auto; padding: 48px 20px; }
+.service-detail p { margin: 0 0 1em; }
+.service-detail .lead { font-size: 18px; font-weight: 700; color: var(--color-primary); margin-bottom: 1.2em; }
+.service-detail ul { padding-left: 1.2em; margin: 0 0 1.4em; }
+.service-detail li { margin-bottom: 0.4em; }
+.service-detail .btn { margin-top: 12px; }
